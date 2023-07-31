@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #c2d5f8;
+    --secondary-color: #808080;
+    --primary-bg: #202b38;
+    --secondary-bg: #000;
+    --thrid-bg: #503c74;
+}
+
+body {
+    background-color: var(--primary-bg);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--primary-color);
+}

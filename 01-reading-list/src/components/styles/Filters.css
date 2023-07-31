@@ -1,0 +1,26 @@
+section.filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 70px;
+    background-color: var(--secondary-bg);
+}
+
+section.filters div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 200px;
+}
+
+.filters input, .filters select {
+    margin-top: 15px;
+}
+
+section.filters div input {
+    padding: 5px;
+}
+
+section.filters .pages small {
+    font-style: italic;
+    color: var(--secondary-color);
+}

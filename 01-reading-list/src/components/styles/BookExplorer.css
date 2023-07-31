@@ -1,0 +1,9 @@
+.explorer {
+    background: var(--thrid-bg);
+    height: 600px;
+}
+
+.explorer p {
+    display: inline-block;
+    margin: 5px 10px;
+}

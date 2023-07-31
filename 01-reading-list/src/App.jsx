@@ -1,9 +1,14 @@
-import './App.css'
+import { Header } from './components/Header'
+import { BookExplorer } from './components/BookExplorer'
+import './styles/App.css'
 
 function App() {
 
   return (
-    <h1>Bienvenido</h1>
+    <>
+      <Header />
+      <BookExplorer />
+    </>
   )
 }
 
