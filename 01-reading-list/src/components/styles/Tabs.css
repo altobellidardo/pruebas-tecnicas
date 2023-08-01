@@ -1,6 +1,6 @@
 .explorer ul {
     list-style: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--primary-color);
     margin-bottom: 20px;
 }
 
@@ -19,11 +19,10 @@
     border: none;
     opacity: .5;
     cursor: pointer;
-    transition: all .3s;
 }
 
 .explorer li button:hover {
-    opacity: .85;
+    opacity: .7;
 }
 
 .explorer li button.active {

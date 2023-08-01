@@ -6,9 +6,10 @@
 :root {
     --primary-color: #a7c686;
     --secondary-color: #fcee8c;
-    --primary-bg: #3c515d;
+    --primary-bg: black;
     --secondary-bg: #3d6868;
-    --thrid-bg: #429398;
+    --secondary-bg: #3c515d;
+    --thrid-bg: #798e8f;
 }
 
 body {

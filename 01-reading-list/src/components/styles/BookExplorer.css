@@ -1,6 +1,6 @@
 .explorer {
-    height: 600px;
     padding-top: 10px;
+    margin-bottom: 50px;
 }
 
 .booklist {
@@ -13,4 +13,14 @@
         1fr
         )
     );
+}
+
+.noBooks {
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.noBooks i {
+    font-size: 100px;
 }

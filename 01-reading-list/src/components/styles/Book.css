@@ -1,9 +1,12 @@
 .book {
-    background-color: var(--thrid-bg);
+    background-color: var(--secondary-bg);
+    background-color: var(--primary-bg);
+    border: 3px solid var(--secondary-bg);
+    border-radius: 5px;
     display: inline-block;
     width: 250px;
     height: 630px;
-    margin: 15px;
+    margin: 12px;
     text-align: center;
     padding: 15px;
 }
@@ -11,12 +14,12 @@
 .book img {
     width: 250px;
     aspect-ratio: 9/16;
-    box-shadow: 6px 6px #000000;
+    box-shadow: 6px 6px var(--secondary-bg);
     transition: all 1s;
 }
 
 .book img:hover {
-    scale: 1.15;
+    scale: 1.125;
     transform: rotate(6deg);
 }
 
@@ -27,7 +30,7 @@
     font-size: 20px;
     color: var(--secondary-color);
     height: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     align-items: center;
 }
 
@@ -40,11 +43,10 @@
     border: none;
     margin: 5px;
     border-radius: 50%;
-    color: green;
     font-size: 25px;
     user-select: none;
-    transition: color .5s;
     padding: 10;
+    color: white;
 }
 
 .book i {
