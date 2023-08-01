@@ -47,7 +47,7 @@
     font-size: 25px;
     user-select: none;
     padding: 10;
-    color: white;
+    color: var(--secondary-bg);
 }
 
 .book i {
