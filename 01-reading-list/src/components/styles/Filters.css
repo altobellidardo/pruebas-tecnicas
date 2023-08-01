@@ -16,7 +16,7 @@ section.filters div {
 }
 
 .filters input, .filters select {
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 section.filters div input {
@@ -24,7 +24,7 @@ section.filters div input {
 }
 
 .filters .pages input {
-    accent-color: var(--primary-color);
+    accent-color: var(--secondary-bg);
     cursor: pointer;
 }
 
@@ -35,7 +35,21 @@ section.filters .pages small {
     color: var(--secondary-color);
 }
 
+.filters .title input {
+    color: var(--primary-color);
+    background-color: var(--secondary-bg);
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
 .filters select {
     text-align: center;
     padding: 8px 0;
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+    border: none;
+    color: var(--primary-color);
+    font-size: 18px;
 }

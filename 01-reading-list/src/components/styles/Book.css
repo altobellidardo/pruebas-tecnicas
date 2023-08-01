@@ -21,6 +21,7 @@
 .book img:hover {
     scale: 1.125;
     transform: rotate(6deg);
+    box-shadow: none;
 }
 
 .book .title {
