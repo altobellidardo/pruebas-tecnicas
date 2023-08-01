@@ -1,0 +1,62 @@
+.book {
+    background-color: var(--thrid-bg);
+    display: inline-block;
+    width: 250px;
+    height: 630px;
+    margin: 15px;
+    text-align: center;
+    padding: 15px;
+}
+
+.book img {
+    width: 250px;
+    aspect-ratio: 9/16;
+    box-shadow: 6px 6px #000000;
+    transition: all 1s;
+}
+
+.book img:hover {
+    scale: 1.15;
+    transform: rotate(6deg);
+}
+
+.book .title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 20px;
+    color: var(--secondary-color);
+    height: 50px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.book .title p {
+    width: 100%;
+}
+
+.book .title button {
+    background-color: transparent;
+    border: none;
+    margin: 5px;
+    border-radius: 50%;
+    color: green;
+    font-size: 25px;
+    user-select: none;
+    transition: color .5s;
+    padding: 10;
+}
+
+.book i {
+    width: 25px;
+    height: 25px;
+}
+
+.book .title button:hover {
+    color: var(--primary-color);
+}
+
+.book .info {
+    margin-top: 20px;
+    color: var(--secondary-color);
+}
