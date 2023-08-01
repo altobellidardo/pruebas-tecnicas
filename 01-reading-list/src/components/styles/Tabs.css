@@ -1,0 +1,32 @@
+.explorer ul {
+    list-style: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.explorer li {
+    display: inline;
+    margin: 0 0 0 10px;
+}
+
+.explorer li button {
+    color: var(--primary-color);
+    width: 300px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    opacity: .5;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.explorer li button:hover {
+    opacity: .85;
+}
+
+.explorer li button.active {
+    border-bottom: 1px solid var(--primary-color);
+    opacity: 1;
+}

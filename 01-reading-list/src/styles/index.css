@@ -1,15 +1,14 @@
 * {
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
 :root {
-    --primary-color: #c2d5f8;
-    --secondary-color: #808080;
-    --primary-bg: #202b38;
-    --secondary-bg: #000;
-    --thrid-bg: #503c74;
+    --primary-color: #a7c686;
+    --secondary-color: #fcee8c;
+    --primary-bg: #3c515d;
+    --secondary-bg: #3d6868;
+    --thrid-bg: #429398;
 }
 
 body {

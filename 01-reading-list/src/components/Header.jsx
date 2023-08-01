@@ -4,7 +4,6 @@ const COMPANY_NAME = 'Bookverse'
 const COMPANY_SLOGAN = 'Explore words, live stories'
 
 export function Header () {
-
   return (
     <header>
       <h1>{COMPANY_NAME}</h1>

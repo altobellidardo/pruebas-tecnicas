@@ -1,14 +1,16 @@
 section.filters {
     display: flex;
     justify-content: space-between;
-    padding: 30px 70px;
+    padding: 20px 70px 20px;
     background-color: var(--secondary-bg);
+    border-radius: 25px 25px 0 0;
 }
 
 section.filters div {
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-size: 20px;
     width: 200px;
 }
 
@@ -21,6 +23,8 @@ section.filters div input {
 }
 
 section.filters .pages small {
+    opacity: .7;
+    font-size: 15px;
     font-style: italic;
     color: var(--secondary-color);
 }
