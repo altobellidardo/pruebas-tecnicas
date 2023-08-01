@@ -6,14 +6,14 @@ const books = dbData.library
 const initialFilters = {
   title: '',
   pages: 1200,
-  genre: 'Terror'
+  genre: 'all'
 }
 
 export function useFilters () {
   const [filters, setFilters] = useState(initialFilters)
 
   const filterList = books.filter(bk => (
-    filters.category === 'all' || bk.book.category === filters.category
+    filters.genre === 'all' || bk.book.genre === filters.genre
   ))
 
   return { filters, filterList, setFilters }
