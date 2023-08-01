@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import dbData from '../../db/books.json'
 
 const books = dbData.library
@@ -19,10 +19,6 @@ export function useFilters () {
       (filt.title === '' || bk.book.title.toLowerCase().includes(filt.title.toLowerCase()))
     ))
   )
-
-  useEffect(() => {
-    console.log(filters)
-  }, [filters])
 
   const filteredList = filterList(initialFilters)
 
