@@ -1,25 +1,31 @@
-section.filters {
+.filters {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
     background-color: var(--primary-bg);
-    border: 3px solid var(--secondary-bg);
+    border: 2px solid var(--secondary-bg);
     border-radius: 15px;
 }
 
-section.filters div {
+.filters div {
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     width: 300px;
 }
 
 .filters input, .filters select {
     margin-top: 5px;
+    color: var(--primary-bg);
 }
 
-section.filters div input {
+.filters input:focus, .filters select:focus {
+    border: none;
+    outline: none;
+}
+
+.filters div input {
     padding: 5px;
 }
 
@@ -28,15 +34,13 @@ section.filters div input {
     cursor: pointer;
 }
 
-section.filters .pages small {
-    opacity: .7;
-    font-size: 15px;
+.filters .pages small {
+    font-size: 13px;
     font-style: italic;
     color: var(--secondary-color);
 }
 
 .filters .title input {
-    color: var(--primary-color);
     background-color: var(--secondary-bg);
     border: none;
     padding: 10px;
@@ -50,6 +54,7 @@ section.filters .pages small {
     background-color: var(--secondary-bg);
     border-radius: 5px;
     border: none;
-    color: var(--primary-color);
+    
     font-size: 18px;
+    font-weight: bold;
 }

@@ -4,12 +4,10 @@
 }
 
 :root {
-    --primary-color: #a7c686;
-    --secondary-color: #fcee8c;
-    --primary-bg: black;
-    --secondary-bg: #3d6868;
-    --secondary-bg: #3c515d;
-    --thrid-bg: #798e8f;
+    --primary-color: #8ECAE6;
+    --secondary-color: #06D6A0;
+    --primary-bg: #023047;
+    --secondary-bg: #FFB703;
 }
 
 body {

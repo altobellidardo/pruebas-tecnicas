@@ -1,10 +1,8 @@
 import { useId } from 'react'
-import { useFilters } from '../hooks/useFilters'
+
 import './styles/Filters.css'
 
-export function Filters () {
-  const { filters, setFilters } = useFilters()
-
+export function Filters ({ filters, setFilters }) {
   const titleId = useId()
   const pagesId = useId()
   const genreId = useId()

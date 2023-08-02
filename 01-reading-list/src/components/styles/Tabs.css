@@ -27,6 +27,5 @@
 
 .explorer li button.active {
     border-bottom: 3px solid var(--primary-color);
-    transform: translateY(1px);
     opacity: 1;
 }

@@ -1,35 +1,29 @@
 import { useState } from 'react'
-import { useFilters } from '../hooks/useFilters'
 import { Filters } from './Filters'
 import { Tabs } from './Tabs'
-import { Book } from './Book'
-import { NoBooks } from './NoBooks'
+import { AvailableBooks } from './AvailableBooks'
+import { ReadingList } from './ReadingList'
+import { useBooks } from '../hooks/useBooks'
 import './styles/BookExplorer.css'
 
 export function BookExplorer () {
-  const { filteredList } = useFilters()
   const [tab, setTab] = useState(1)
+  const { filters, setFilters, filtBooks, readList, setReadList } = useBooks()
 
   return (
     <>
-      <Filters />
+      <Filters filters={filters} setFilters={setFilters} />
+
       <div className='explorer'>
-        <Tabs active={tab} change={setTab} />
+        <Tabs active={tab} change={setTab} books={filtBooks} readList={readList} setFilters={setFilters} />
         {
           tab === 1
-            ? <div className='bookList'>
-              {
-              filteredList.length === 0
-                ? <NoBooks />
-                : filteredList.map(bk => (
-                  <Book key={bk.book.ISBN} props={bk.book} />
-                ))
-            } </div>
+            ? <AvailableBooks books={filtBooks} readList={readList} setReadList={setReadList} />
             : ''
         }
         {
           tab === 2
-            ? <NoBooks />
+            ? <ReadingList books={filtBooks} readList={readList} setReadList={setReadList} />
             : ''
         }
 
