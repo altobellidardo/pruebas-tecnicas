@@ -10,20 +10,20 @@ import './styles/BookExplorer.css'
 
 export function BookExplorer () {
   const [tab, setTab] = useState(1)
-  const { filters, setFilters, filtBooks, readList, setReadList } = useBooks()
+  const { filters, setFilters, avaiBooks, setAvaiBooks, readList, setReadList, modifyRL, filtBooks } = useBooks()
 
   return (
     <section className='explorer'>
       <Filters filters={filters} setFilters={setFilters} />
-      <Tabs active={tab} change={setTab} books={filtBooks} readList={readList} setFilters={setFilters} />
+      <Tabs tabProps={{ active: tab, change: setTab }} avaiQty={avaiBooks.length} rlQty={readList.length} />
       {
         tab === 1
-          ? <AvailableBooks books={filtBooks} readList={readList} setReadList={setReadList} />
+          ? <AvailableBooks books={avaiBooks} readList={readList} setReadList={setReadList} />
           : ''
       }
       {
         tab === 2
-          ? <ReadingList books={filtBooks} readList={readList} setReadList={setReadList} />
+          ? <ReadingList readList={readList} setReadList={setReadList} />
           : ''
       }
     </section>

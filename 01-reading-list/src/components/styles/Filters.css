@@ -7,8 +7,8 @@
     border-radius: 15px;
 }
 
-.filters div {
-    width: 300px;
+.filters .title {
+    width: 400px;
 }
 
 .filters .title, .filters .catego2 div  {
@@ -33,59 +33,26 @@
     outline: none;
 }
 
-
-/* .filters div {
-    width: 500px;
+.filters .catego2 {
+    display: inherit;
 }
 
-.filters div div {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: 16px;
-    width: 400px;
+.filters .catego2 div {
+    width: 100%;
+    padding: 0 10px;
+    width: 200px;
 }
 
-.filters div.title {
-    width: 350px;
+.filters .catego2 div input {
+    margin-top: 15px;
 }
 
-.filters input, .filters select {
-    margin-top: 5px;
-    color: var(--primary-bg);
-}
-
-.filters input:focus, .filters select:focus {
-    border: none;
-    outline: none;
-}
-
-.filters div input {
-    padding: 5px;
-}
-
-.filters .pages input {
+.filters .pages {
     accent-color: var(--secondary-bg);
-    cursor: pointer;
 }
 
-.filters .pages small {
-    font-size: 13px;
-    font-style: italic;
-    color: var(--secondary-color);
-}
-
-.filters .title input {
-    background-color: var(--secondary-bg);
-    color: var(--primary-bg);
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.filters select {
+.filters .catego2 div select {
+    margin-top: 10px;
     text-align: center;
     padding: 8px 0;
     background-color: var(--secondary-bg);
@@ -93,4 +60,4 @@
     border: none;
     font-size: 18px;
     font-weight: bold;
-} */
+}

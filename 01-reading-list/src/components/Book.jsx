@@ -1,12 +1,8 @@
 import './styles/Book.css'
 
-export function Book ({ props, readList, setReadList }) {
+export function Book ({ props, readList }) {
   const handleBookClick = (event) => {
-    setReadList(prevState => [
-      ...prevState,
-      event.target.id
-    ])
-    console.log(readList) // delete later
+    console.log(readList)
   }
 
   return (

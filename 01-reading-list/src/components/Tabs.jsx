@@ -1,39 +1,29 @@
 import './styles/Tabs.css'
 
-export function Tabs ({ active, change, books, readList, setFilters }) {
+export function Tabs ({ tabProps, avaiQty, rlQty }) {
+  const { active, change } = tabProps
+
   return (
     <ul className='tabs'>
       <li>
         <button
-          onClick={() => {
-            change(1)
-            setFilters(prevState => ({
-              ...prevState,
-              readListActive: false
-            }))
-          }}
+          onClick={() => change(1)}
           className={
-          active === 1 ? 'active' : ''
-        }
+            active === 1 ? 'active' : ''
+          }
         >
-          Books available ({books.length})
+          Books available ({avaiQty})
         </button>
       </li>
 
       <li>
         <button
-          onClick={() => {
-            change(2)
-            setFilters(prevState => ({
-              ...prevState,
-              readListActive: true
-            }))
-          }}
+          onClick={() => change(2)}
           className={
-          active === 2 ? 'active' : ''
-        }
+            active === 2 ? 'active' : ''
+          }
         >
-          Reading list ({readList.length})
+          Reading list ({rlQty})
         </button>
       </li>
     </ul>
