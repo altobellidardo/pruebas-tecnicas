@@ -38,6 +38,11 @@ export function useBooks () {
 
         setAvaiBooks((prevState) => prevState.concat(selectBook))
       }
+    } else if (action === actionsRL.deleteAll) {
+      const blockBooks = readList.slice()
+      setAvaiBooks(avaiBooks.concat(blockBooks))
+
+      setReadList([])
     }
   }
 

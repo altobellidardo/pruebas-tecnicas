@@ -29,3 +29,12 @@
     border-bottom: 3px solid var(--primary-color);
     opacity: 1;
 }
+
+.explorer li button.deleteRL-enable {
+    opacity: 1;
+    color: #db5e5e;
+}
+
+.explorer li button.deleteRL-disable {
+    display: none;
+}

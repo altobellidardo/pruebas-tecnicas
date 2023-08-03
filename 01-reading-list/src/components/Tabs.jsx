@@ -1,6 +1,7 @@
+import { actionsRL } from '../logic/constants'
 import './styles/Tabs.css'
 
-export function Tabs ({ tabProps, avaiQty, rlQty }) {
+export function Tabs ({ tabProps, avaiQty, rlQty, deleteRL }) {
   const { active, change } = tabProps
 
   return (
@@ -24,6 +25,14 @@ export function Tabs ({ tabProps, avaiQty, rlQty }) {
           }
         >
           Reading list ({rlQty})
+        </button>
+      </li>
+      <li>
+        <button
+          className={rlQty ? 'deleteRL-enable' : 'deleteRL-disable'}
+          onClick={() => deleteRL(null, actionsRL.deleteAll)}
+        >
+          Delete Reading list <i className='bi bi-trash3'> </i>
         </button>
       </li>
     </ul>

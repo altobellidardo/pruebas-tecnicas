@@ -15,5 +15,6 @@ export const initialFilters = {
 
 export const actionsRL = {
   add: 'add',
-  delete: 'delete'
+  delete: 'delete',
+  deleteAll: 'deleteAll'
 }

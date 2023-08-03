@@ -3,7 +3,7 @@
     justify-content: space-between;
     padding: 20px 50px;
     background-color: var(--primary-bg);
-    border: 1px solid var(--secondary-bg);
+    border: 3px solid var(--primary-color);
     border-radius: 15px;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .filters .title input {
-    background-color: var(--secondary-bg);
+    background-color: var(--primary-color);
     color: var(--primary-bg);
     padding: 5px;
     border: none;
@@ -48,14 +48,14 @@
 }
 
 .filters .pages {
-    accent-color: var(--secondary-bg);
+    accent-color: var(--primary-color);
 }
 
 .filters .catego2 div select {
     margin-top: 10px;
     text-align: center;
     padding: 8px 0;
-    background-color: var(--secondary-bg);
+    background-color: var(--primary-color);
     border-radius: 5px;
     border: none;
     font-size: 18px;

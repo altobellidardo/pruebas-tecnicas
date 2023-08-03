@@ -18,9 +18,25 @@ function App () {
     <>
       <Header />
       <main className='explorer'>
-        <Filters filters={filters} setFilters={setFilters} />
-        <Tabs tabProps={{ active: tab, change: setTab }} avaiQty={avaiBooks.length} rlQty={readList.length} />
-        <BookDisplay books={tab === 1 ? filtBooks : filtList} modify={modifyLists} mode={tab === 1 ? 'available' : 'readlist'} />
+
+        <Filters
+          filters={filters}
+          setFilters={setFilters}
+        />
+
+        <Tabs
+          tabProps={{ active: tab, change: setTab }}
+          avaiQty={avaiBooks.length}
+          rlQty={readList.length}
+          deleteRL={modifyLists}
+        />
+
+        <BookDisplay
+          books={tab === 1 ? filtBooks : filtList}
+          modify={modifyLists}
+          mode={tab === 1 ? 'available' : 'readlist'}
+        />
+
       </main>
     </>
   )
