@@ -1,7 +1,6 @@
 .book {
-    background-color: var(--secondary-bg);
     background-color: var(--primary-bg);
-    border: 3px solid var(--secondary-bg);
+    border: 1px solid var(--secondary-bg);
     border-radius: 5px;
     display: inline-block;
     width: 250px;
@@ -15,7 +14,7 @@
     width: 220px;
     aspect-ratio: 9/16;
     box-shadow: 6px 6px var(--secondary-bg);
-    transition: all 1s;
+    transition: all .5s;
 }
 
 .book img:hover {
@@ -27,12 +26,12 @@
 .book .title {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 100%;
     font-size: 20px;
     color: var(--secondary-color);
     height: 50px;
     margin-bottom: 10px;
-    align-items: center;
 }
 
 .book .title p {
@@ -43,16 +42,8 @@
     background-color: transparent;
     border: none;
     margin: 5px;
-    border-radius: 50%;
-    font-size: 25px;
-    user-select: none;
-    padding: 10;
+    font-size: 27px;
     color: var(--secondary-bg);
-}
-
-.book i {
-    width: 25px;
-    height: 25px;
 }
 
 .book .title button:hover {

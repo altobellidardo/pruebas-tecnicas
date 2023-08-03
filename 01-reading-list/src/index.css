@@ -10,6 +10,10 @@
     --secondary-bg: #FFB703;
 }
 
+#root {
+    margin: 0 50px;
+}
+
 body {
     background-color: var(--primary-bg);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

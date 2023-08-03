@@ -14,7 +14,11 @@ export function Book ({ props, readList, setReadList }) {
       <div className='title'>
         <p>{props.title}</p>
         <button onClick={handleBookClick}>
-          <i className='bi bi-plus-circle-fill' id={props.ISBN}> </i>
+          {
+            readList.includes(props.ISBN)
+              ? <i class='bi bi-bookmark-x-fill' id={props.ISBN}> </i>
+              : <i className='bi bi-bookmark-plus-fill' id={props.ISBN}> </i>
+          }
         </button>
       </div>
       <img src={props.cover} alt={props.title} />

@@ -1,47 +1,27 @@
-import { useId } from 'react'
-
 import './styles/Filters.css'
 
 export function Filters ({ filters, setFilters }) {
-  const titleId = useId()
-  const pagesId = useId()
-  const genreId = useId()
-
-  const handleTitle = (event) => {
+  const handleFilter = (event, filter) => {
     setFilters(prevState => ({
       ...prevState,
-      title: event.target.value
-    }))
-  }
-
-  const handlePage = (event) => {
-    setFilters(prevState => ({
-      ...prevState,
-      pages: event.target.value
-    }))
-  }
-
-  const handleGenre = (event) => {
-    setFilters(prevState => ({
-      ...prevState,
-      genre: event.target.value
+      [filter]: event.target.value
     }))
   }
 
   return (
-    <>
-      <section className='filters'>
-        <div className='title' id={titleId}>
-          <label htmlFor='title'>Search by title</label>
-          <input
-            type='text'
-            id='title'
-            placeholder='Harry Potter, Frankeinstein ...'
-            onInput={handleTitle}
-          />
-        </div>
+    <section className='filters'>
+      <div className='title'>
+        <label htmlFor='title'>Search by title</label>
+        <input
+          type='text'
+          id='title'
+          placeholder='Harry Potter, Frankeinstein ...'
+          onInput={(event) => handleFilter(event, 'title')}
+        />
+      </div>
 
-        <div className='pages' id={pagesId}>
+      <div className='catego2'>
+        <div className='pages'>
           <label htmlFor='pages'>Search by pages </label>
           <input
             type='range'
@@ -50,14 +30,18 @@ export function Filters ({ filters, setFilters }) {
             max={1200}
             step={10}
             value={filters.pages}
-            onInput={handlePage}
+            onInput={(event) => handleFilter(event, 'pages')}
           />
           <small>Max: {filters.pages} pages</small>
         </div>
 
-        <div className='genre' id={genreId}>
+        <div className='genre'>
           <label htmlFor='genre'>Search by genre</label>
-          <select name='genre' id='genre' onChange={handleGenre}>
+          <select
+            name='genre'
+            id='genre'
+            onChange={(event) => handleFilter(event, 'genre')}
+          >
             <option value='all'>All</option>
             <option value='Fantasía'>Fantasy</option>
             <option value='Ciencia ficción'>Science fiction</option>
@@ -65,8 +49,8 @@ export function Filters ({ filters, setFilters }) {
             <option value='Terror'>Terror</option>
           </select>
         </div>
+      </div>
 
-      </section>
-    </>
+    </section>
   )
 }

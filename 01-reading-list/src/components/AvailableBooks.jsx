@@ -3,7 +3,7 @@ import { Book } from './Book'
 
 export function AvailableBooks ({ books, readList, setReadList }) {
   return (
-    <div className='bookList'>
+    <article className='bookList'>
       {
         books.length === 0
           ? <NoBooks />
@@ -11,6 +11,6 @@ export function AvailableBooks ({ books, readList, setReadList }) {
             <Book key={bk.book.ISBN} props={bk.book} readList={readList} setReadList={setReadList} />
           ))
       }
-    </div>
+    </article>
   )
 }
