@@ -1,14 +1,14 @@
 import { NoBooks } from './NoBooks'
 import { Book } from './Book'
 
-export function AvailableBooks ({ books, modify }) {
+export function BookDisplay ({ books, modify, mode }) {
   return (
     <article className='bookList'>
       {
         books.length === 0
           ? <NoBooks />
           : books.map(bk => (
-            <Book key={bk.book.ISBN} props={bk.book} modify={modify} />
+            <Book key={bk.book.ISBN} props={bk.book} modify={modify} mode={mode} />
           ))
       }
     </article>

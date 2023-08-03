@@ -1,8 +1,10 @@
+import { actionsRL } from '../logic/constants'
 import './styles/Book.css'
 
-export function Book ({ props, modify }) {
-  const handleBookClick = (event) => {
-    modify(props.ISBN, 'add')
+export function Book ({ props, modify, mode }) {
+  const handleBookClick = () => {
+    if (mode === 'available') modify(props.ISBN, actionsRL.add)
+    else modify(props.ISBN, actionsRL.delete)
   }
 
   return (
@@ -10,12 +12,11 @@ export function Book ({ props, modify }) {
       <div className='title'>
         <p>{props.title}</p>
         <button onClick={handleBookClick}>
-          <i className='bi bi-bookmark-x-fill' id={props.ISBN}> </i>
-          {/* {
-            readList.includes(props.ISBN)
-              ? <i className='bi bi-bookmark-x-fill' id={props.ISBN}> </i>
-              : <i className='bi bi-bookmark-plus-fill' id={props.ISBN}> </i>
-          } */}
+          {
+            mode === 'available'
+              ? <i className='bi bi-bookmark-plus-fill'> </i>
+              : <i className='bi bi-bookmark-x-fill'> </i>
+          }
         </button>
       </div>
       <img src={props.cover} alt={props.title} />

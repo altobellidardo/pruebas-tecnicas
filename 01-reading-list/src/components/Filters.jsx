@@ -1,3 +1,4 @@
+import { initialFilters } from '../logic/constants'
 import './styles/Filters.css'
 
 export function Filters ({ filters, setFilters }) {
@@ -27,7 +28,7 @@ export function Filters ({ filters, setFilters }) {
             type='range'
             id='pagesI'
             min={0}
-            max={1200}
+            max={initialFilters.pages}
             step={10}
             value={filters.pages}
             onInput={(event) => handleFilter(event, 'pages')}

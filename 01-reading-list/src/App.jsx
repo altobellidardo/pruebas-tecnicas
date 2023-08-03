@@ -1,12 +1,27 @@
+import { useState } from 'react'
 import { Header } from './components/Header'
-import { BookExplorer } from './components/BookExplorer'
+
+import { Filters } from './components/Filters'
+import { Tabs } from './components/Tabs'
+import { BookDisplay } from './components/BookDisplay'
+
+import { useBooks } from './hooks/useBooks'
+import './App.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 function App () {
+  const [tab, setTab] = useState(1)
+
+  const { filters, setFilters, avaiBooks, filtBooks, readList, filtList, modifyLists } = useBooks()
+
   return (
     <>
       <Header />
-      <BookExplorer />
+      <main className='explorer'>
+        <Filters filters={filters} setFilters={setFilters} />
+        <Tabs tabProps={{ active: tab, change: setTab }} avaiQty={avaiBooks.length} rlQty={readList.length} />
+        <BookDisplay books={tab === 1 ? filtBooks : filtList} modify={modifyLists} mode={tab === 1 ? 'available' : 'readlist'} />
+      </main>
     </>
   )
 }
