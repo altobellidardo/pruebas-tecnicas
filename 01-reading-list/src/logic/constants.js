@@ -10,8 +10,7 @@ export const booksDb = dbData.library
 export const initialFilters = {
   title: '',
   pages: 1200,
-  genre: 'all',
-  readListActive: false
+  genre: 'all'
 }
 
 export const genreOptions = {

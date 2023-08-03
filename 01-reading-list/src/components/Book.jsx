@@ -1,8 +1,8 @@
 import './styles/Book.css'
 
-export function Book ({ props, readList }) {
+export function Book ({ props, modify }) {
   const handleBookClick = (event) => {
-    console.log(readList)
+    modify(props.ISBN, 'add')
   }
 
   return (
@@ -10,11 +10,12 @@ export function Book ({ props, readList }) {
       <div className='title'>
         <p>{props.title}</p>
         <button onClick={handleBookClick}>
-          {
+          <i className='bi bi-bookmark-x-fill' id={props.ISBN}> </i>
+          {/* {
             readList.includes(props.ISBN)
-              ? <i class='bi bi-bookmark-x-fill' id={props.ISBN}> </i>
+              ? <i className='bi bi-bookmark-x-fill' id={props.ISBN}> </i>
               : <i className='bi bi-bookmark-plus-fill' id={props.ISBN}> </i>
-          }
+          } */}
         </button>
       </div>
       <img src={props.cover} alt={props.title} />
