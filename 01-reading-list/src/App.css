@@ -7,3 +7,7 @@
 .noBooks i {
     font-size: 100px;
 }
+
+.noBooks small {
+    font-size: 17px;
+}

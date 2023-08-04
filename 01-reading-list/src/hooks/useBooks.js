@@ -11,29 +11,29 @@ export function useBooks () {
 
   function doFilterBooks (listOfBooks) {
     return (
-      listOfBooks.filter((bk) => (
-        (filters.genre === 'all' || bk.book.genre === filters.genre) &&
-        (bk.book.pages <= filters.pages) &&
-        (filters.title === '' || bk.book.title.toLowerCase().includes(filters.title.toLowerCase()))
+      listOfBooks.filter(({ book }) => (
+        (filters.genre === 'all' || book.genre === filters.genre) &&
+        (book.pages <= filters.pages) &&
+        (filters.title === '' || book.title.toLowerCase().includes(filters.title.toLowerCase()))
       ))
     )
   }
 
   function modifyLists (bookISBN, action) {
     if (action === actionsRL.add) {
-      const selectBook = avaiBooks.filter((bk) => bk.book.ISBN === bookISBN)[0]
+      const selectBook = avaiBooks.filter(({ book }) => book.ISBN === bookISBN)[0]
 
       if (selectBook) {
         setReadList((prevState) => prevState.concat(selectBook))
 
-        const cleanAvaiBooks = avaiBooks.filter((bk) => bk.book.ISBN !== bookISBN)
+        const cleanAvaiBooks = avaiBooks.filter(({ book }) => book.ISBN !== bookISBN)
         setAvaiBooks(cleanAvaiBooks)
       }
     } else if (action === actionsRL.delete) {
-      const selectBook = readList.filter((bk) => bk.book.ISBN === bookISBN)[0]
+      const selectBook = readList.filter(({ book }) => book.ISBN === bookISBN)[0]
 
       if (selectBook) {
-        const cleanRL = readList.filter((bk) => bk.book.ISBN !== bookISBN)
+        const cleanRL = readList.filter(({ book }) => book.ISBN !== bookISBN)
         setReadList(cleanRL)
 
         setAvaiBooks((prevState) => prevState.concat(selectBook))
