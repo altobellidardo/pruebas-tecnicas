@@ -1,23 +1,26 @@
 import { useEffect, useState } from 'react'
 import { booksDb, initialFilters, actionsRL } from '../logic/constants'
 
+function doFilterBooks (listOfBooks, filters) {
+  const afterFilters = listOfBooks.filter(({ book }) => (
+    (filters.genre === 'all' || book.genre === filters.genre) &&
+    (book.pages <= filters.pages) &&
+    (filters.title === '' || book.title.toLowerCase().includes(filters.title.toLowerCase()))
+  ))
+
+  const sortedBooks = afterFilters.sort((a, b) => a.book.ISBN.localeCompare(b.book.ISBN))
+
+  return sortedBooks
+}
+
 export function useBooks () {
   const [filters, setFilters] = useState(initialFilters)
 
   const [avaiBooks, setAvaiBooks] = useState(booksDb)
-  const [filtBooks, setFiltBooks] = useState(doFilterBooks(booksDb))
+  const [filtBooks, setFiltBooks] = useState(booksDb)
+
   const [readList, setReadList] = useState([])
   const [filtList, setFiltList] = useState([])
-
-  function doFilterBooks (listOfBooks) {
-    return (
-      listOfBooks.filter(({ book }) => (
-        (filters.genre === 'all' || book.genre === filters.genre) &&
-        (book.pages <= filters.pages) &&
-        (filters.title === '' || book.title.toLowerCase().includes(filters.title.toLowerCase()))
-      ))
-    )
-  }
 
   function modifyLists (bookISBN, action) {
     if (action === actionsRL.add) {
@@ -47,11 +50,11 @@ export function useBooks () {
   }
 
   useEffect(() => {
-    setFiltBooks(doFilterBooks(avaiBooks))
+    setFiltBooks(doFilterBooks(avaiBooks, filters))
   }, [avaiBooks, filters])
 
   useEffect(() => {
-    setFiltList(doFilterBooks(readList))
+    setFiltList(doFilterBooks(readList, filters))
   }, [readList, filters])
 
   return {
