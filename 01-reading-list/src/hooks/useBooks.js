@@ -8,10 +8,12 @@ function doFilterBooks (listOfBooks, filters, sort) {
     (filters.title === '' || book.title.toLowerCase().includes(filters.title.toLowerCase()))
   ))
 
-  if (sort) {
-    const sortedBooks = afterFilters.sort((a, b) => a.book.ISBN.localeCompare(b.book.ISBN))
-    return sortedBooks
-  } else return afterFilters
+  return afterFilters
+}
+
+function doSort (listOfBooks) {
+  const sortedBooks = listOfBooks.sort((a, b) => a.book.ISBN.localeCompare(b.book.ISBN))
+  return sortedBooks
 }
 
 export function useBooks () {
@@ -83,7 +85,9 @@ export function useBooks () {
   }
 
   useEffect(() => {
-    setFiltBooks(doFilterBooks(avaiBooks, filters, true))
+    setFiltBooks(
+      doSort(doFilterBooks(avaiBooks, filters))
+    )
   }, [avaiBooks, filters])
 
   useEffect(() => {
