@@ -1,19 +1,19 @@
 .book {
     background-color: var(--primary-bg);
-    border: 1px solid var(--secondary-bg);
-    border-radius: 5px;
+    border: 2px solid;
+    border-radius: 10px;
     display: inline-block;
     width: 250px;
     height: 550px;
-    margin: 12px;
+    margin: 15px;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
 }
 
 .book img {
     width: 220px;
     aspect-ratio: 9/16;
-    box-shadow: 6px 6px var(--secondary-bg);
+    box-shadow: 6px 6px var(--primary-color);
     transition: all .5s;
 }
 
@@ -42,11 +42,11 @@
     border: none;
     margin: 5px;
     font-size: 27px;
-    color: var(--secondary-bg);
+    color: var(--primary-color);
 }
 
 .book .title button:hover {
-    color: var(--primary-color);
+    color: var(--secondary-bg);
 }
 
 .book .info {

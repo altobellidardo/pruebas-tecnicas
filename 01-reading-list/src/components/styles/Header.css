@@ -1,7 +1,9 @@
 header {
     margin: 25px;
+    width: min-content;
 }
 
 header h1 {
     font-size: 3rem;
+    color: var(--secondary-bg);
 }

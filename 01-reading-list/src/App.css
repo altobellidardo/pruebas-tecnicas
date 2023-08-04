@@ -1,15 +1,3 @@
-.booklist {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(
-        300px,
-        1fr
-        )
-    );
-}
-
 .noBooks {
     margin-top: 50px;
     font-size: 30px;

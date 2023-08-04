@@ -29,8 +29,10 @@
     border-radius: 5px;
 }
 
-.filters input:focus {
+.filters input:focus, .filters select:focus {
     outline: none;
+    accent-color: var(--secondary-bg);
+    background-color: var(--secondary-bg);
 }
 
 .filters .catego2 {
@@ -60,4 +62,8 @@
     border: none;
     font-size: 18px;
     font-weight: bold;
+}
+
+.filters .catego2 div select:focus {
+    background-color: var(--secondary-bg);
 }
