@@ -40,6 +40,10 @@
         width: 100%;
     }
 
+    .filters .title input {
+        padding: 5px;
+    }
+
     .filters .catego2{
         display: block;
         width: 100%;
@@ -51,9 +55,18 @@
         margin-top: 15px;
     }
 
+    .filters .catego2 div input {
+        margin-top: 0;
+    }
+
+    .filters .catego2 div select {
+        margin-top: 5px;
+        padding: 2px;
+    }
+
     .tabs li button {
         font-size: 17px;
-        width: 190px;
+        width: 180px;
         height: 50px;
         padding: 0;
     }
