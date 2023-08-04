@@ -1,8 +1,24 @@
-# 01 Reading list
+# 01 Reading list 📖
 
-This is a project
+🔗 URL: https://daltobelli-01-reading-list.netlify.app/
 
-[Reference](https://darkwool-libreria.netlify.app/)
+Server  status 👇
 
-![reference 1](./public/referencia1.png)
-![reference 2](./public/referencia2.png)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/38b8bd41-1412-4466-ae90-44d11ddd469e/deploy-status)](https://app.netlify.com/sites/daltobelli-01-reading-list/deploys)
+
+🔗 Reference URL: https://darkwool-libreria.netlify.app/
+
+### Technologies :
+- Vite
+- React 
+- Boostrap icons
+
+### Proyect commands
+- Build:
+ ```bash
+    $ npm run build
+ ```
+- Dev:
+ ```bash
+    $ npm run dev
+ ``` 
