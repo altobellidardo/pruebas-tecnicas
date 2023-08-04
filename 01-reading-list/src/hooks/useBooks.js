@@ -60,7 +60,7 @@ export function useBooks () {
         return readList
       }
 
-      const readListCopy = [...readList]
+      const readListCopy = readList.slice()
 
       if (index > 0) {
         [readListCopy[index], readListCopy[index - 1]] = [readListCopy[index - 1], readListCopy[index]]
@@ -74,7 +74,7 @@ export function useBooks () {
         return readList
       }
 
-      const readListCopy = [...readList]
+      const readListCopy = readList.slice()
 
       if (index < lastIndex) {
         [readListCopy[index], readListCopy[index + 1]] = [readListCopy[index + 1], readListCopy[index]]

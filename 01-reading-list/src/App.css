@@ -1,3 +1,11 @@
+.bookList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
 .noBooks {
     margin-top: 50px;
     font-size: 30px;
@@ -15,10 +23,15 @@
 @media (max-width: 900px) {
     .filters {
         flex-direction: column;
+        align-items: center;
     }
 }
 
 @media (max-width: 600px) {
+    .filters {
+        padding: 10px;
+    }
+
     .filters label {
         text-align: left;
     }
@@ -27,11 +40,21 @@
         width: 100%;
     }
 
-    .filters .catego2 {
-        flex-direction: column;
+    .filters .catego2{
+        display: block;
+        width: 100%;
     }
 
-    .filters .catego2 {
+    .filters .catego2 div {
         width: 100%;
+        padding: 0;
+        margin-top: 15px;
+    }
+
+    .tabs li button {
+        font-size: 17px;
+        width: 190px;
+        height: 50px;
+        padding: 0;
     }
 }
