@@ -16,5 +16,13 @@ export const initialFilters = {
 export const actionsRL = {
   add: 'add',
   delete: 'delete',
-  deleteAll: 'deleteAll'
+  deleteAll: 'deleteAll',
+  knowIndex: 'knowIndex',
+  up: 'up',
+  down: 'down'
+}
+
+export const posterStates = {
+  available: 'available',
+  readlist: 'readlist'
 }

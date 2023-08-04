@@ -6,6 +6,7 @@ import { Tabs } from './components/Tabs'
 import { BookDisplay } from './components/BookDisplay'
 
 import { useBooks } from './hooks/useBooks'
+import { posterStates } from './logic/constants'
 import './App.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
@@ -34,7 +35,7 @@ function App () {
         <BookDisplay
           books={tab === 1 ? filtBooks : filtList}
           modify={modifyLists}
-          mode={tab === 1 ? 'available' : 'readlist'}
+          mode={tab === 1 ? posterStates.available : posterStates.readlist}
         />
 
       </main>

@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react'
 import { booksDb, initialFilters, actionsRL } from '../logic/constants'
 
-function doFilterBooks (listOfBooks, filters) {
+function doFilterBooks (listOfBooks, filters, sort) {
   const afterFilters = listOfBooks.filter(({ book }) => (
     (filters.genre === 'all' || book.genre === filters.genre) &&
     (book.pages <= filters.pages) &&
     (filters.title === '' || book.title.toLowerCase().includes(filters.title.toLowerCase()))
   ))
 
-  const sortedBooks = afterFilters.sort((a, b) => a.book.ISBN.localeCompare(b.book.ISBN))
-
-  return sortedBooks
+  if (sort) {
+    const sortedBooks = afterFilters.sort((a, b) => a.book.ISBN.localeCompare(b.book.ISBN))
+    return sortedBooks
+  } else return afterFilters
 }
 
 export function useBooks () {
@@ -46,15 +47,47 @@ export function useBooks () {
       setAvaiBooks(avaiBooks.concat(blockBooks))
 
       setReadList([])
+    } else if (action === actionsRL.knowIndex) {
+      const index = readList.findIndex(({ book }) => book.ISBN === bookISBN)
+
+      return { index, lastIndex: readList.length - 1 }
+    } else if (action === actionsRL.up) {
+      const { index } = modifyLists(bookISBN, actionsRL.knowIndex)
+
+      if (index === -1) {
+        return readList
+      }
+
+      const readListCopy = [...readList]
+
+      if (index > 0) {
+        [readListCopy[index], readListCopy[index - 1]] = [readListCopy[index - 1], readListCopy[index]]
+      }
+
+      setReadList(readListCopy)
+    } else if (action === actionsRL.down) {
+      const { index, lastIndex } = modifyLists(bookISBN, actionsRL.knowIndex)
+
+      if (index === -1) {
+        return readList
+      }
+
+      const readListCopy = [...readList]
+
+      if (index < lastIndex) {
+        [readListCopy[index], readListCopy[index + 1]] = [readListCopy[index + 1], readListCopy[index]]
+      }
+
+      setReadList(readListCopy)
     }
   }
 
   useEffect(() => {
-    setFiltBooks(doFilterBooks(avaiBooks, filters))
+    setFiltBooks(doFilterBooks(avaiBooks, filters, true))
   }, [avaiBooks, filters])
 
   useEffect(() => {
-    setFiltList(doFilterBooks(readList, filters))
+    setFiltList(doFilterBooks(readList, filters, false))
   }, [readList, filters])
 
   return {
