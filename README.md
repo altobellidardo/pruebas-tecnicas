@@ -12,7 +12,7 @@ git clone https://github.com/altobellidardo/pruebas-tecnicas
 instead if you only want a single project you should use for example:
 
 ```bash
-git  clone https://github.com/altobellidardo/pruebas-tecnicas/01-reading-list
+git clone https://github.com/altobellidardo/pruebas-tecnicas/01-reading-list
 ```
 
 
